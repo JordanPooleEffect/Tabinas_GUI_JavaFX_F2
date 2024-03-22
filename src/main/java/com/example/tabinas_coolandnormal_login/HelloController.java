@@ -1,5 +1,5 @@
 package com.example.tabinas_coolandnormal_login;
-
+//
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -20,6 +20,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+
 public class HelloController {
     public TextField fieldUsername;
     public TextField fieldPassword;
@@ -28,6 +31,7 @@ public class HelloController {
     public Button btnLogout;
     public GridPane pnLogout;
     public ColorPicker cpPicker;
+    public Button btnDarkMode;
     @FXML
     private VBox pnLogin;
     private List<User> users;
@@ -62,20 +66,22 @@ public class HelloController {
         Parent scene = FXMLLoader.load(HelloApplication.class.getResource("hello-view.fxml"));
         String color = cpPicker.getValue().toString().substring(2, cpPicker.getValue().toString().length() - 2);
         System.out.println(cpPicker.getValue());
-        String temp = ".button {\n" + "\t-fx-background-color: #" + color + ";\n" + "\n" + "}";
+        String temp = ".button {\n" + "\t-fx-background-color: #" + color + ";\n" + "}";
 
-            File cssFile = new File("src/main/resources/com/example/tabinas_coolandnormal_login/user1.css");
-            try (BufferedWriter bw = new BufferedWriter(new FileWriter(cssFile))) {
-                bw.write(temp);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        File cssFile = new File("src/main/resources/com/example/tabinas_coolandnormal_login/user1.css");
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(cssFile))) {
+            bw.write(temp);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-            L.getStylesheets().add(getClass().getResource("user1.css").toExternalForm());
+        L.getStylesheets().add(getClass().getResource("user1.css").toExternalForm());
 
-            L.getChildren().clear();
-            L.getChildren().add(scene);
+
+        L.getChildren().clear();
+        L.getChildren().add(scene);
     }
+
 
     private static class User {
         private String username;
@@ -92,6 +98,24 @@ public class HelloController {
 
         public String getPassword() {
             return password;
+        }
+    }
+
+    private boolean isDarkMode = false;
+
+    public void toggleDarkMode(MouseEvent mouseEvent) {
+        if (!isDarkMode) {
+            pnLogout.setStyle("-fx-background-color: #333333;");
+            cpPicker.setStyle("-fx-color-label-visible: true;");
+            btnLogout.setStyle("-fx-background-color: #555555; -fx-text-fill: white;");
+            btnDarkMode.setStyle("-fx-background-color: #555555; -fx-text-fill: white;");
+            isDarkMode = true;
+        } else {
+            pnLogout.setStyle(null);
+            cpPicker.setStyle(null);
+            btnLogout.setStyle(null);
+            btnDarkMode.setStyle(null);
+            isDarkMode = false;
         }
     }
 }
