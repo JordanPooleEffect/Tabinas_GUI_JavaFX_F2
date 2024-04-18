@@ -37,14 +37,16 @@
                         </font>
                     </Label>
                     <TextField fx:id="fieldUsername" prefHeight="41.0" prefWidth="130.0" GridPane.columnIndex="1" />
-                    <TextField fx:id="fieldPassword" prefHeight="40.0" prefWidth="151.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                    <PasswordField fx:id="fieldPassword" prefHeight="40.0" prefWidth="151.0" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
                 </children>
             </GridPane>
-            <Button fx:id="btnSignin" alignment="CENTER" onMouseClicked="#userLogin" prefHeight="27.0" prefWidth="87.0" text="Sign In">
+            <Button fx:id="btnSignin" styleClass="button" onAction="#userLogin" text="Sign In">
                 <font>
                     <Font size="18.0" />
                 </font>
             </Button>
+            <Button fx:id="registerButton" text="Register" onAction="#handleRegister" layoutX="200" layoutY="200" />
+
             <!--<Button fx:id="btnDarkMode" onMouseClicked="#toggleDarkMode" prefHeight="27.0" prefWidth="100.0" text="Dark Mode">
                 <font>
                     <Font size="18.0" />
