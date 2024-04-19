@@ -25,6 +25,7 @@
                     <Font size="14.0" />
                 </font>
             </Button>
+            <Button fx:id="Dashboardbtn" styleClass="button" text="Go to Dashboard" onAction="#handleDashboard" />
         </VBox>
         </GridPane>
     </children>

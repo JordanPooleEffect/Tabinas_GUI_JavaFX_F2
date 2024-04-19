@@ -12,6 +12,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.sql.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -20,6 +21,8 @@ public class HelloController {
 
     public GridPane pnLogout;
     public Button btnDarkMode;
+    public Button loginBtn;
+    public Button Dashboardbtn;
     @FXML
     private TextField fieldUsername;
     @FXML
@@ -83,7 +86,8 @@ public class HelloController {
     private void userLogin(ActionEvent event) throws IOException {
         String username = fieldUsername.getText();
         String password = fieldPassword.getText();
-        if (users.containsKey(username) && users.get(username).equals(password)) {
+
+        if (isValidLogin(username, password)) {
             currentUser = username;
             MessageText.setText("Successfully logged in!");
             applyUserCss(username);
@@ -91,6 +95,21 @@ public class HelloController {
         } else {
             MessageText.setText("Incorrect username or password.");
         }
+    }
+
+    private boolean isValidLogin(String username, String password) {
+        try (Connection c = MySQLConnection.getConnection();
+             PreparedStatement stmt = c.prepareStatement(
+                     "SELECT password FROM users WHERE username = ?")) {
+            stmt.setString(1, username);
+            ResultSet res = stmt.executeQuery();
+            if (res.next()) {
+                return res.getString("password").equals(password);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return users.containsKey(username) && users.get(username).equals(password);
     }
 
     @FXML
@@ -168,6 +187,16 @@ public class HelloController {
             logoutButton.setStyle(null);
             btnDarkMode.setStyle(null);
             isDarkMode = false;
+        }
+    }
+
+    public void handleDashboard(ActionEvent actionEvent) {
+        try {
+            Parent dashboardview = FXMLLoader.load(getClass().getResource("dashboard.fxml"));
+            Scene scene = Dashboardbtn.getScene();
+            scene.setRoot(dashboardview);
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }

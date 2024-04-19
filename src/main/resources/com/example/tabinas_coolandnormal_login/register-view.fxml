@@ -10,6 +10,7 @@
         <Label text="Password:" />
         <PasswordField fx:id="passwordField" />
         <Button fx:id="registerButton" text="Register" onAction="#handleRegister" />
+        <Button fx:id="loginBtn" text="Go To Login Page" onAction="#handleLogin" layoutX="200" layoutY="200" />
     </children>
     <padding>
         <Insets top="10" right="10" bottom="10" left="10" />
