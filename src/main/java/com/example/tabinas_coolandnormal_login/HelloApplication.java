@@ -15,15 +15,16 @@ import java.sql.Statement;
 public class HelloApplication extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
-        createTable();
+        createUserTable();
+        createAlarmClockTable();
         Parent root = FXMLLoader.load(getClass().getResource("login-view.fxml"));
         Scene scene = new Scene(root, 600, 400);
         primaryStage.setScene(scene);
-        primaryStage.setTitle("Login App");
+        primaryStage.setTitle("Zedric Marc D. Tabinas");
         primaryStage.show();
     }
 
-    private void createTable() {
+    private void createUserTable() {
         try (Connection c = MySQLConnection.getConnection();
              Statement statement = c.createStatement()) {
             String query = "CREATE TABLE IF NOT EXISTS users (" +
@@ -31,7 +32,20 @@ public class HelloApplication extends Application {
                     "username VARCHAR(100) NOT NULL," +
                     "password VARCHAR(100) NOT NULL)";
             statement.execute(query);
-            System.out.println("TABLE CREATED");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void createAlarmClockTable() {
+        try (Connection c = MySQLConnection.getConnection();
+             Statement statement = c.createStatement()) {
+            String query = "CREATE TABLE IF NOT EXISTS alarms (" +
+                    "id INT PRIMARY KEY AUTO_INCREMENT," +
+                    "user_id INT," +
+                    "time TIME NOT NULL," +
+                    "FOREIGN KEY (user_id) REFERENCES users(id))";
+            statement.execute(query);
         } catch (SQLException e) {
             e.printStackTrace();
         }

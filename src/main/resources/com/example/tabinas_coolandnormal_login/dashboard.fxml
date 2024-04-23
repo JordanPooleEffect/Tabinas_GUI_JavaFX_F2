@@ -1,31 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<?import javafx.scene.text.Font?>
-<?import javafx.geometry.Insets?>
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.tabinas_coolandnormal_login.Dashboard"
-            prefHeight="400.0" prefWidth="600.0">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tabinas_coolandnormal_login.Dashboard">
 
     <children>
-        <VBox fx:id="pnDashboard" alignment="CENTER" prefHeight="333.0" prefWidth="420.0" spacing="20.0">
-            <padding>
-                <Insets bottom="20.0" left="20.0" right="40.0" top="20.0" />
-            </padding>
-            <Label prefHeight="36.0" prefWidth="160.0" text="UPDATE HERE">
-                <font>
-                    <Font size="25.0" />
-                </font>
-            </Label>
-            <Button fx:id="btnUpdate" styleClass="button" text="CHANGE PASSWORD" onAction="#GoToCredentials" />
-            <Button fx:id="btnDelete" styleClass="button" text="DELETE ACCOUNT HERE" onAction="#GoToDelete" />
-        </VBox>
+
+        <ImageView blendMode="DARKEN" fitHeight="363.0" fitWidth="558.0" layoutX="23.0" layoutY="19.0">
+            <image>
+                <Image url="@canvas.jpg" />
+            </image>
+        </ImageView>
+        <!-- Image -->
+        <ImageView blendMode="DARKEN" fitHeight="430.0" fitWidth="754.0">
+            <image>
+                <Image url="@cartoon-mountain.jpg" />
+            </image>
+        </ImageView>
+
+
+        <!-- Labels and Buttons -->
+        <Label alignment="CENTER" layoutX="44.0" layoutY="37.0" prefHeight="61.0" prefWidth="203.0" text="MY APPS">
+            <font>
+                <Font name="Impact" size="49.0" />
+            </font>
+        </Label>
+        <Button fx:id="btnUpdate" layoutX="64.0" layoutY="124.0" onAction="#GoToCredentials" prefHeight="100.0" prefWidth="110.0" styleClass="button" text="PASSWORD CHANGER" textAlignment="CENTER" textOverrun="CLIP" wrapText="true">
+         <font>
+            <Font name="Impact" size="18.0" />
+         </font></Button>
+        <Button fx:id="btnDelete" layoutX="254.0" layoutY="124.0" onAction="#GoToDelete" prefHeight="100.0" prefWidth="110.0" styleClass="button" text="ACCOUNT DELETER" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="Impact" size="18.0" />
+         </font></Button>
+      <Button fx:id="btnAlarmClock" layoutX="436.0" layoutY="124.0" mnemonicParsing="false" onAction="#GoToAlarmClock" prefHeight="100.0" prefWidth="110.0" text="ALARM CLOCK" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="Impact" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnLogout" layoutX="506.0" layoutY="37.0" mnemonicParsing="false" onAction="#handleLogout" text="LOGOUT">
+         <font>
+            <Font name="Impact" size="12.0" />
+         </font>
+      </Button>
     </children>
 
 </AnchorPane>

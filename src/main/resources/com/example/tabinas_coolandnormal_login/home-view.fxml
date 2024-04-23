@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tabinas_coolandnormal_login.HelloController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tabinas_coolandnormal_login.HelloController">
     <children>
         <GridPane fx:id="pnLogout" layoutY="-1.0" prefHeight="303.0" prefWidth="424.0">
-        <VBox alignment="CENTER" prefHeight="333.0" prefWidth="420.0" spacing="20.0">
+        <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="342.0" prefWidth="420.0" spacing="20.0">
             <padding>
                 <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
             </padding>
@@ -17,16 +17,22 @@
                     <Font size="25.0" />
                 </font>
             </Label>
-            <Button fx:id="changeColorButton" styleClass="button" text="Change Button Color" onAction="#handleColorChange"/>
-            <ColorPicker fx:id="colorPicker" />
-            <Button fx:id="logoutButton" styleClass="button" text="Logout" onAction="#handleLogout" />
+            <Button fx:id="changeColorButton" onAction="#handleColorChange" styleClass="button" text="Change Button Color" />
+            <ColorPicker fx:id="colorPicker" prefHeight="31.0" prefWidth="125.0" />
+            <Button fx:id="logoutButton" onAction="#handleLogout" styleClass="button" text="Logout" />
             <Button fx:id="btnDarkMode" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#toggleDarkMode" prefHeight="54.0" prefWidth="99.0" text="Dark Mode" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                 <font>
                     <Font size="14.0" />
                 </font>
             </Button>
-            <Button fx:id="Dashboardbtn" styleClass="button" text="Go to Dashboard" onAction="#handleDashboard" />
+            <Button fx:id="Dashboardbtn" onAction="#handleDashboard" styleClass="button" text="Go to Dashboard" />
         </VBox>
+         <columnConstraints>
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+         </rowConstraints>
         </GridPane>
     </children>
 </AnchorPane>

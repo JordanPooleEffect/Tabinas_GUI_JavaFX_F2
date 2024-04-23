@@ -2,21 +2,37 @@
 
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tabinas_coolandnormal_login.DeleteController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tabinas_coolandnormal_login.DeleteController">
 
         <padding>
             <Insets bottom="20.0" left="20.0" right="40.0" top="20.0" />
         </padding>
-        <Label layoutX="120.0" layoutY="88.0" prefHeight="36.0" prefWidth="361.0" text="WANNA GO TO THE DARKSIDE?">
+   <ImageView fitHeight="562.0" fitWidth="765.0" layoutX="-165.0" layoutY="-15.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@rick.jpg" />
+      </image>
+   </ImageView>
+        <Label layoutX="40.0" layoutY="-66.0" prefHeight="335.0" prefWidth="496.0" text="IS THIS ACCOUNT TRASH?" textFill="#e4e4e4" wrapText="true">
             <font>
-                <Font size="25.0" />
+                <Font name="Impact" size="72.0" />
             </font>
         </Label>
 
-    <Button fx:id="btnDeleteAccount" layoutX="239.0" layoutY="175.0" onAction="#handleDeleteAccount" text="Delete This Account" />
-    <Button fx:id="btnBack" layoutX="242.0" layoutY="256.0" onAction="#handleDashboard" text="Back to Dashboard" />
+    <Button fx:id="btnDeleteAccount" layoutX="48.0" layoutY="329.0" onAction="#handleDeleteAccount" prefHeight="45.0" prefWidth="167.0" text="TRASH DIS ACCOUNT" textAlignment="CENTER">
+      <font>
+         <Font name="Impact" size="16.0" />
+      </font></Button>
+    <Button fx:id="btnBack" layoutX="564.0" layoutY="14.0" onAction="#handleDashboard" prefHeight="15.0" prefWidth="18.0" text="X" textAlignment="CENTER">
+      <font>
+         <Font name="Impact" size="12.0" />
+      </font></Button>
+   <Label layoutX="48.0" layoutY="200.0" prefHeight="104.0" prefWidth="213.0" text="YOU WILL LOSE ALL YOUR DATA! DONT SAY I DIDNT WARN YOU! :&gt;" textFill="#cdcdcd" wrapText="true">
+      <font>
+         <Font name="Barlow Condensed Bold" size="25.0" />
+      </font></Label>
 
 </AnchorPane>

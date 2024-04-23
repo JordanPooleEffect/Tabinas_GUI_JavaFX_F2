@@ -1,19 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
 
-<VBox xmlns="http://javafx.com/javafx/8.0.161" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tabinas_coolandnormal_login.RegisterController">
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tabinas_coolandnormal_login.RegisterController">
     <children>
-        <Label text="Username:" />
-        <TextField fx:id="usernameField" />
-        <Label text="Password:" />
-        <PasswordField fx:id="passwordField" />
-        <Button fx:id="registerButton" text="Register" onAction="#handleRegister" />
-        <Button fx:id="loginBtn" text="Go To Login Page" onAction="#handleLogin" layoutX="200" layoutY="200" />
+         <!-- Left side with image -->
+         <ImageView fitHeight="407.0" fitWidth="636.0" layoutX="-337.0" layoutY="-5.0">
+             <image>
+                 <Image url="@mountain.jpg" />
+             </image>
+         </ImageView>
+          <Label alignment="CENTER" contentDisplay="CENTER" layoutX="350.0" layoutY="62.0" prefHeight="39.0" prefWidth="210.0" text="REGISTRATION FORM">
+              <font>
+                  <Font name="Impact" size="25.0" />
+              </font>
+          </Label>
+          <Label layoutX="332.0" layoutY="135.0" prefHeight="22.0" prefWidth="82.0" text="Username:" textAlignment="CENTER">
+              <font>
+                  <Font name="Impact" size="18.0" />
+              </font>
+          </Label>
+          <TextField fx:id="usernameField" layoutX="419.0" layoutY="125.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="41.0" />
+          <Label layoutX="332.0" layoutY="187.0" text="Password:">
+         <font>
+            <Font name="Impact" size="18.0" />
+         </font>
+      </Label>
+          <PasswordField fx:id="passwordField" layoutX="419.0" layoutY="178.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="41.0" />
+          <Button fx:id="registerButton" layoutX="396.0" layoutY="248.0" onAction="#handleRegister" prefHeight="37.0" prefWidth="91.0" text="SIGN UP">
+         <font>
+            <Font name="Impact" size="19.0" />
+         </font></Button>
+          <Button fx:id="loginBtn" layoutX="396.0" layoutY="302.0" onAction="#handleLogin" prefHeight="37.0" prefWidth="91.0" text="SIGN IN">
+         <font>
+            <Font name="Impact" size="19.0" />
+         </font></Button>
+        <GridPane hgap="20" layoutX="-357.0" layoutY="-3.0">
+            <columnConstraints>
+                <ColumnConstraints />
+                <ColumnConstraints />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints />
+            </rowConstraints>
+        </GridPane>
     </children>
-    <padding>
-        <Insets top="10" right="10" bottom="10" left="10" />
-    </padding>
-    <spacing>10</spacing>
-</VBox>
+</AnchorPane>

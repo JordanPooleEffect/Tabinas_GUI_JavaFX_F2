@@ -6,6 +6,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
@@ -53,6 +55,7 @@ public class HelloController {
 
     @FXML
     private void initialize() {
+
         if (registerButton != null) {
             registerButton.setOnAction(event -> {
                 handleRegister(event);
@@ -175,7 +178,9 @@ public class HelloController {
     }
 
     private void switchToMainScene() throws IOException {
-        Parent mainView = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("home-view.fxml")));
+        // Parent mainView = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("home-view.fxml")));
+        // AKO LANG SAH E NON-VISIBLE SI HOME-VIEW.FXML
+        Parent mainView = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("dashboard.fxml")));
         currentScene = pnLogin.getScene();
         currentScene.setRoot(mainView);
     }

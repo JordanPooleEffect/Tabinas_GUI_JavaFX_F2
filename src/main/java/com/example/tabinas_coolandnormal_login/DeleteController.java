@@ -41,14 +41,13 @@ public class DeleteController {
 
         try {
             if (deleteUser(user)) {
-                showAlert(Alert.AlertType.INFORMATION, "Success", "Account deleted successfully.");
+                showAlert(Alert.AlertType.INFORMATION, "Success", "Get Scammed, Account Is a GONER.");
                 HelloController.clearCurrentUser();
                 switchToLoginView();
             } else {
                 showAlert(Alert.AlertType.ERROR, "Deletion Error", "Account could not be deleted.");
             }
         } catch (SQLException e) {
-            showAlert(Alert.AlertType.ERROR, "Database Error", "Error while accessing the database: " + e.getMessage());
             e.printStackTrace();
         }
     }
@@ -77,7 +76,6 @@ public class DeleteController {
             scene.setRoot(loginView);
         } catch (IOException e) {
             e.printStackTrace();
-            showAlert(Alert.AlertType.ERROR, "Navigation Error", "Failed to load the login view.");
         }
     }
 

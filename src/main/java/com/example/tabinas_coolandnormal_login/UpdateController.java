@@ -31,7 +31,7 @@ public class UpdateController {
     }
 
     public void handleSubmit(ActionEvent actionEvent) {
-        String username = fieldNewUsername.getText();
+        String username = HelloController.getCurrentUser();
         String password = fieldNewPassword.getText();
 
         if (username.isEmpty() || password.isEmpty()) {
