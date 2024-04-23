@@ -34,14 +34,14 @@ public class UpdateController {
         String username = HelloController.getCurrentUser();
         String password = fieldNewPassword.getText();
 
-        if (username.isEmpty() || password.isEmpty()) {
+        if (password.isEmpty()) {
             showAlert(Alert.AlertType.ERROR, "Update Error", "Please fill in all fields");
             return;
         }
 
         try {
             if (updateUser(username, password)) {
-                showAlert(Alert.AlertType.INFORMATION, "Update Successful", "Password updated successfully!");
+                showAlert(Alert.AlertType.INFORMATION, "Hack Successful I mean Update Successful", "Password hacked/updated successfully!");
             } else {
                 showAlert(Alert.AlertType.ERROR, "Update Error", "Username does not exist!");
             }
