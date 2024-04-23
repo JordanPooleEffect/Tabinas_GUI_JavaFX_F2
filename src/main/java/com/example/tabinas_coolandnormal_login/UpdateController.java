@@ -71,7 +71,6 @@ public class UpdateController {
         updateStatement.setString(2, username);
 
         int rows = updateStatement.executeUpdate();
-        System.out.println("Rows Updated: " + rows);
 
         c.close();
 

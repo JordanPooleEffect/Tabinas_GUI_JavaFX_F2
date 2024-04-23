@@ -1,28 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<?import javafx.scene.text.Font?>
-<?import javafx.geometry.Insets?>
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.example.tabinas_coolandnormal_login.DeleteController"
-            prefHeight="400.0" prefWidth="600.0">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tabinas_coolandnormal_login.DeleteController">
 
         <padding>
             <Insets bottom="20.0" left="20.0" right="40.0" top="20.0" />
         </padding>
-        <Label prefHeight="36.0" prefWidth="160.0" text="DELETE USER">
+        <Label layoutX="120.0" layoutY="88.0" prefHeight="36.0" prefWidth="361.0" text="WANNA GO TO THE DARKSIDE?">
             <font>
                 <Font size="25.0" />
             </font>
         </Label>
 
-    <Button fx:id="btnDelete" text="Back to Dashboard" onAction="#handleDashboard" layoutX="200" layoutY="200" />
-    <Button fx:id="btnBack" text="Back to Dashboard" onAction="#handleDashboard" layoutX="200" layoutY="200" />
+    <Button fx:id="btnDeleteAccount" layoutX="239.0" layoutY="175.0" onAction="#handleDeleteAccount" text="Delete This Account" />
+    <Button fx:id="btnBack" layoutX="242.0" layoutY="256.0" onAction="#handleDashboard" text="Back to Dashboard" />
 
 </AnchorPane>

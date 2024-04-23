@@ -66,8 +66,6 @@ public class RegisterController {
 
         int rows = insertStatement.executeUpdate();
 
-        System.out.println("+ Rows Inserted: " + rows);
-
         c.close();
 
         return rows > 0;
@@ -84,7 +82,7 @@ public class RegisterController {
     @FXML
     private void handleLogin(ActionEvent event) {
         try {
-            Parent loginView = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
+            Parent loginView = FXMLLoader.load(getClass().getResource("login-view.fxml"));
             Scene scene = registerButton.getScene();
             scene.setRoot(loginView);
         } catch (IOException e) {

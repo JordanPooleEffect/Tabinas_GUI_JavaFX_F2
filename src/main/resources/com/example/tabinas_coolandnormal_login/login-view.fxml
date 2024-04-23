@@ -7,7 +7,7 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tabinas_coolandnormal_login.HelloController">
     <children>
-        <VBox fx:id="pnLogin" alignment="CENTER" prefHeight="333.0" prefWidth="420.0" spacing="20.0">
+        <VBox fx:id="pnLogin" alignment="CENTER" prefHeight="400.0" prefWidth="600.0" spacing="20.0">
             <padding>
                 <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
             </padding>
@@ -16,10 +16,10 @@
                     <Font size="25.0" />
                 </font>
             </Label>
-            <GridPane prefHeight="134.0" prefWidth="262.0">
+            <GridPane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="163.0" prefWidth="400.0" VBox.vgrow="NEVER">
                 <columnConstraints>
-                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="275.0" minWidth="10.0" prefWidth="125.0" />
+                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="461.0" minWidth="10.0" prefWidth="275.0" />
                 </columnConstraints>
                 <rowConstraints>
                     <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -37,15 +37,15 @@
                         </font>
                     </Label>
                     <TextField fx:id="fieldUsername" prefHeight="41.0" prefWidth="130.0" GridPane.columnIndex="1" />
-                    <PasswordField fx:id="fieldPassword" prefHeight="40.0" prefWidth="151.0" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                    <PasswordField fx:id="fieldPassword" prefHeight="40.0" prefWidth="151.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                 </children>
             </GridPane>
-            <Button fx:id="btnSignin" styleClass="button" onAction="#userLogin" text="Sign In">
+            <Button fx:id="btnSignin" onAction="#userLogin" styleClass="button" text="Sign In">
                 <font>
                     <Font size="18.0" />
                 </font>
             </Button>
-            <Button fx:id="registerButton" text="Register" onAction="#handleRegister" layoutX="200" layoutY="200" />
+            <Button fx:id="registerButton" layoutX="200" layoutY="200" onAction="#handleRegister" prefHeight="43.0" prefWidth="81.0" text="Register" />
 
             <!--<Button fx:id="btnDarkMode" onMouseClicked="#toggleDarkMode" prefHeight="27.0" prefWidth="100.0" text="Dark Mode">
                 <font>

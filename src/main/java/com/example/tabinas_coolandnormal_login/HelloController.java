@@ -44,7 +44,7 @@ public class HelloController {
 
     private final Map<String, String> users = new HashMap<>();
     private final Map<String, String> userCssPaths = new HashMap<>();
-    private String currentUser;
+    public static String currentUser;
     private Scene currentScene;
 
     public HelloController() {
@@ -82,13 +82,25 @@ public class HelloController {
         users.put("normal", "pass");
     }
 
+    public static void setCurrentUser(String username) {
+        currentUser = username;
+    }
+
+    public static void clearCurrentUser() {
+        currentUser = null;
+    }
+
+    public static String getCurrentUser() {
+        return currentUser;
+    }
+
     @FXML
     private void userLogin(ActionEvent event) throws IOException {
         String username = fieldUsername.getText();
         String password = fieldPassword.getText();
 
         if (isValidLogin(username, password)) {
-            currentUser = username;
+            setCurrentUser(username);
             MessageText.setText("Successfully logged in!");
             applyUserCss(username);
             switchToMainScene();
@@ -114,10 +126,10 @@ public class HelloController {
 
     @FXML
     private void handleLogout(ActionEvent event) throws IOException {
-        Parent loginView = FXMLLoader.load(Objects.requireNonNull(HelloApplication.class.getResource("hello-view.fxml")));
+        Parent loginView = FXMLLoader.load(Objects.requireNonNull(HelloApplication.class.getResource("login-view.fxml")));
         Scene scene = logoutButton.getScene();
         scene.setRoot(loginView);
-        currentUser = null;
+        clearCurrentUser();
     }
 
     @FXML
@@ -199,4 +211,6 @@ public class HelloController {
             e.printStackTrace();
         }
     }
+
+
 }
