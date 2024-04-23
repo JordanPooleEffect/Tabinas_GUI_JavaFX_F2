@@ -53,11 +53,23 @@ public class DeleteController {
     }
 
     private boolean deleteUser(String username) throws SQLException {
+        deleteAlarmsForUser(username);
         try (Connection connection = MySQLConnection.getConnection();
              PreparedStatement stmt = connection.prepareStatement("DELETE FROM users WHERE username = ?")) {
             stmt.setString(1, username);
             int affectedRows = stmt.executeUpdate();
             return affectedRows > 0;
+        }
+    }
+
+    private void deleteAlarmsForUser(String username) throws SQLException {
+        int userId = AlarmClockController.getUserIdByUsername(username);
+        if (userId != -1) {
+            try (Connection connection = MySQLConnection.getConnection();
+                 PreparedStatement stmt = connection.prepareStatement("DELETE FROM alarms WHERE user_id = ?")) {
+                stmt.setInt(1, userId);
+                stmt.executeUpdate();
+            }
         }
     }
 

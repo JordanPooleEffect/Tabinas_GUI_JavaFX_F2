@@ -192,7 +192,7 @@ public class AlarmClockController {
         }
     }
 
-    private int getUserIdByUsername(String username) {
+    static int getUserIdByUsername(String username) {
         int userId = -1;
         String query = "SELECT id FROM users WHERE username = ?";
         try (Connection connection = MySQLConnection.getConnection();
