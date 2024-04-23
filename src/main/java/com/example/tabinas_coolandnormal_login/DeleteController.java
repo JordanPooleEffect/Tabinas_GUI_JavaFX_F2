@@ -27,7 +27,6 @@ public class DeleteController {
             scene.setRoot(dashboardView);
         } catch (IOException e) {
             e.printStackTrace();
-            showAlert(Alert.AlertType.ERROR, "Navigation Error", "Failed to load the Dashboard view.");
         }
     }
 

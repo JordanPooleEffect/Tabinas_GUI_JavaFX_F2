@@ -55,14 +55,9 @@ public class HelloController {
 
     @FXML
     private void initialize() {
-
-        if (registerButton != null) {
-            registerButton.setOnAction(event -> {
-                handleRegister(event);
-            });
-        } else {
-            System.err.println("Error: registerButton is null. Check if it is properly defined in the FXML file.");
-        }
+        registerButton.setOnAction(event -> {
+            handleRegister(event);
+        });
     }
 
     @FXML
@@ -104,7 +99,6 @@ public class HelloController {
 
         if (isValidLogin(username, password)) {
             setCurrentUser(username);
-            MessageText.setText("Successfully logged in!");
             applyUserCss(username);
             switchToMainScene();
         } else {

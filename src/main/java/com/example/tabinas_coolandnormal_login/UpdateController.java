@@ -35,7 +35,6 @@ public class UpdateController {
         String password = fieldNewPassword.getText();
 
         if (password.isEmpty()) {
-            showAlert(Alert.AlertType.ERROR, "Update Error", "Please fill in all fields");
             return;
         }
 
@@ -46,7 +45,6 @@ public class UpdateController {
                 showAlert(Alert.AlertType.ERROR, "Update Error", "Username does not exist!");
             }
         } catch (SQLException e) {
-            showAlert(Alert.AlertType.ERROR, "Database Error", "Error updating user: " + e.getMessage());
             e.printStackTrace();
         }
     }
