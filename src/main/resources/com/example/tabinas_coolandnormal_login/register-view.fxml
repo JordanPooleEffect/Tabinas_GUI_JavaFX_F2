@@ -7,7 +7,6 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tabinas_coolandnormal_login.RegisterController">
     <children>
-         <!-- Left side with image -->
          <ImageView fitHeight="407.0" fitWidth="636.0" layoutX="-337.0" layoutY="-5.0">
              <image>
                  <Image url="@mountain.jpg" />
